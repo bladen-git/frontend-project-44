@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import { name } from "../src/cli.js";
+import { name } from "../../src/cli.js";
 import readlineSync from "readline-sync";
-import { correctAnswer, wrongAnswer, win } from "../src/index.js";
+import { correctAnswer, wrongAnswer, win } from "../../src/index.js";
 
 const randomNum1 = () => Math.floor(Math.random() * 10) + 1;
 const randomNum2 = () => Math.floor(Math.random() * 50) + 1;
