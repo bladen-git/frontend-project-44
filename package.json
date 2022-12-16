@@ -22,7 +22,7 @@
     "brain-calc": "bin/games/brain-calc.js",
     "brain-gcd": "bin/games/brain-gcd.js",
     "brain-progression": "bin/games/brain-progression.js",
-    "brain-primary": "bin/games/brain-prime.js"
+    "brain-prime": "bin/games/brain-prime.js"
   },
   "dependencies": {
     "eslint": "^8.29.0",
