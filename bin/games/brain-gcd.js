@@ -34,7 +34,7 @@ const game = () => {
       return;
     }
   }
-  console.log(`Congratulations, ${userName}`);
+  win(userName);
 };
 
 game();
