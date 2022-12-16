@@ -18,15 +18,16 @@
   "homepage": "https://github.com/bladen-git/frontend-project-44#readme",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even" : "bin/games/brain-even.js",
-    "brain-calc" : "bin/games/brain-calc.js",
-    "brain-gcd" : "bin/games/brain-gcd.js",
-    "brain-progression" : "bin/games/brain-progression.js",
-    "brain-primary" : "bin/games/brain-primary.js"
+    "brain-even": "bin/games/brain-even.js",
+    "brain-calc": "bin/games/brain-calc.js",
+    "brain-gcd": "bin/games/brain-gcd.js",
+    "brain-progression": "bin/games/brain-progression.js",
+    "brain-primary": "bin/games/brain-primary.js"
   },
   "dependencies": {
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "readline-sync": "^1.4.10"
   }
 }
