@@ -1,17 +1,14 @@
 #!/usr/bin/env node
+import name from "../../src/cli.js";
 import readlineSync from "readline-sync";
-
-console.log("node bin/brain-games.js\nWelcome to the Brain Games!");
-
-export const name = readlineSync.question("May I have your name? ");
-
-console.log(`Hello, ${name}!`);
+import { correctAnswer, win, wrongAnswer } from "../../src/index.js";
 
 const randomOp = () => Math.floor(Math.random() * 3) + 1;
 const randomNum1 = () => Math.floor(Math.random() * 25) + 1;
 const randomNum2 = () => Math.floor(Math.random() * 25) + 1;
 
 const game = () => {
+  const userName = name();
   console.log("What is the result of the expression?");
   for (let i = 0; i < 3; i += 1) {
     const operator = randomOp();
@@ -22,12 +19,9 @@ const game = () => {
         "Question: " + savedNum1 + " + " + savedNum2 + "\nYour answer: "
       );
       if (Number(question1) === savedNum1 + savedNum2) {
-        console.log("Correct!");
+        correctAnswer();
       } else {
-        console.log(`${question1} is wrong answer ;(. Correct answer was ${
-          savedNum1 + savedNum2
-        }
-          Let's try again ${name}`);
+        wrongAnswer(question1, savedNum1 + savedNum2, userName);
         return;
       }
     } else if (operator === 2) {
@@ -35,12 +29,9 @@ const game = () => {
         "Question: " + savedNum1 + " - " + savedNum2 + "\nYour answer: "
       );
       if (Number(question2) === savedNum1 - savedNum2) {
-        console.log("Correct!");
+        correctAnswer();
       } else {
-        console.log(`${question2} is wrong answer ;(. Correct answer was ${
-          savedNum1 - savedNum2
-        }
-          Let's try again ${name}`);
+        wrongAnswer(question2, savedNum1 - savedNum2, userName);
         return;
       }
     } else {
@@ -48,17 +39,14 @@ const game = () => {
         "Question: " + savedNum1 + " * " + savedNum2 + "\nYour answer: "
       );
       if (Number(question3) === savedNum1 * savedNum2) {
-        console.log("Correct!");
+        correctAnswer();
       } else {
-        console.log(`${question3} is wrong answer ;(. Correct answer was ${
-          savedNum1 * savedNum2
-        }
-          Let's try again ${name}`);
+        wrongAnswer(question3, savedNum1 * savedNum2, userName);
         return;
       }
     }
   }
-  console.log(`Congratulations, ${name}`);
+  win(userName);
 };
 
 game();
