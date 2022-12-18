@@ -5,6 +5,12 @@ import { correctAnswer, wrongAnswer, win } from '../../src/index.js';
 
 const randomNum = () => Math.round(Math.random() * 120);
 
+const answer = (question, num) => {
+  if ((question === 'yes' && num % 2 === 0)
+  || (question === 'no' && num % 2 !== 0)) return true;
+  return false;
+};
+
 const game = () => {
   const userName = name();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -13,10 +19,7 @@ const game = () => {
     const question = readlineSync.question(
       `Question: ${savedNum}\nYour answer: `,
     );
-    if (
-      (question === 'yes' && savedNum % 2 === 0)
-      || (question === 'no' && savedNum % 2 !== 0)
-    ) {
+    if (answer(question, savedNum) === true) {
       correctAnswer();
     } else if (question === 'yes') {
       wrongAnswer(question, 'no', userName);
