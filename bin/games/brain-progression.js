@@ -1,14 +1,12 @@
 #!/usr/bin/env node
-import { name } from "../../src/cli.js";
-import readlineSync, { question } from "readline-sync";
-import { correctAnswer, wrongAnswer, win } from "../../src/index.js";
+import readlineSync from 'readline-sync';
+import name from '../../src/cli.js';
+import { correctAnswer, wrongAnswer, win } from '../../src/index.js';
 
 const randomStartNum = () => Math.floor(Math.random() * 10) + 1;
 const randomLength = () => Math.floor(Math.random() * 5) + 5;
 const randomDif = () => Math.floor(Math.random() * 5) + 1;
-const randomPos = (length) => {
-  return length - Math.floor(Math.random() * 5);
-};
+const randomPos = (length) => length - Math.floor(Math.random() * 5);
 let arr = [];
 let answer;
 
@@ -19,13 +17,13 @@ const genLine = (arrStart, arrDif, arrLength, arrPos) => {
     arr.push(arr[arr.length - 1] + arrDif);
   }
   answer = arr[arrPos];
-  arr[arrPos] = "..";
+  arr[arrPos] = '..';
 };
 
 const game = () => {
   const userName = name();
 
-  console.log("What number is missing in the progression?");
+  console.log('What number is missing in the progression?');
 
   for (let j = 0; j < 3; j += 1) {
     const savedStartNum = randomStartNum();
@@ -35,7 +33,7 @@ const game = () => {
 
     genLine(savedStartNum, savedDif, savedLength, savedPos);
     const question = readlineSync.question(
-      "Question: " + arr.join(" ") + "\nYour answer: "
+      `Question: ${arr.join(' ')}\nYour answer: `,
     );
 
     if (Number(question) === answer) {
