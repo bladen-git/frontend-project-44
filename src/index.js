@@ -9,7 +9,7 @@ export const win = (name) => console.log(`Congratulations, ${name}!`);
 
 export const calcQuestion = (num1, num2, operator) => `Question: ${num1} ${operator} ${num2}\nYour answer: `;
 
-export const answerAssign = (a, b, op) => {
+export const calcAnswerAssign = (a, b, op) => {
   switch (op) {
     case '+':
       return a + b;
@@ -20,4 +20,22 @@ export const answerAssign = (a, b, op) => {
     default:
       return '???';
   }
+};
+
+export const isPrime = (num) => {
+  let result;
+  for (let i = 2; i <= Math.round(Math.sqrt(num)); i += 1) {
+    if (num % i === 0) {
+      result = 'no';
+    }
+  }
+  return result;
+};
+
+export const primeAnswer = (question, num) => {
+  if ((question === 'yes' && isPrime(num) !== 'no')
+  || (question === 'no' && isPrime(num) === 'no')) {
+    return true;
+  }
+  return false;
 };

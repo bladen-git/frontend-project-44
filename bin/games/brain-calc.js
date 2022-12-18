@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import name from '../../src/cli.js';
 import {
-  answerAssign, calcQuestion, correctAnswer, win, wrongAnswer,
+  calcAnswerAssign, calcQuestion, correctAnswer, win, wrongAnswer,
 } from '../../src/index.js';
 
 const randomOp = () => {
@@ -28,7 +28,7 @@ const game = () => {
     const savedOp = randomOp();
     const savedNum1 = randomNum1();
     const savedNum2 = randomNum2();
-    const answer = answerAssign(savedNum1, savedNum2, savedOp);
+    const answer = calcAnswerAssign(savedNum1, savedNum2, savedOp);
 
     const question = readlineSync.question(calcQuestion(savedNum1, savedNum2, savedOp));
 
