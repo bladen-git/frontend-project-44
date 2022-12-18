@@ -8,3 +8,16 @@ export const wrongAnswer = (wrong, correct, name) => {
 export const win = (name) => console.log(`Congratulations, ${name}!`);
 
 export const calcQuestion = (num1, num2, operator) => `Question: ${num1} ${operator} ${num2}\nYour answer: `;
+
+export const answerAssign = (a, b, op) => {
+  switch (op) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      return '???';
+  }
+};
