@@ -8,7 +8,11 @@ const randomNum2 = () => Math.floor(Math.random() * 50) + 1;
 let smallestNum;
 
 const isGreater = (a, b) => {
-  a > b ? (smallestNum = b) : (smallestNum = a);
+  if (a > b) {
+    smallestNum = b;
+  } else {
+    smallestNum = a;
+  }
 };
 
 const game = () => {

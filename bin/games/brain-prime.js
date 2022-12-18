@@ -6,11 +6,13 @@ import { correctAnswer, wrongAnswer, win } from '../../src/index.js';
 const randomNum = () => Math.floor(Math.random() * 50) + 1;
 
 const isPrime = (num) => {
+  let result;
   for (let i = 2; i <= Math.round(Math.sqrt(num)); i += 1) {
     if (num % i === 0) {
-      return 'no';
+      result = 'no';
     }
   }
+  return result;
 };
 
 const game = () => {
