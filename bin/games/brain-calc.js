@@ -33,7 +33,10 @@ const game = () => {
     const question = readlineSync.question(calcQuestion(savedNum1, savedNum2, savedOp));
 
     if (Number(question) === answer) correctAnswer();
-    else wrongAnswer(question, answer, userName);
+    else {
+      wrongAnswer(question, answer, userName);
+      return;
+    }
   }
   win(userName);
 };
