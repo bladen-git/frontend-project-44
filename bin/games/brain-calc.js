@@ -16,7 +16,7 @@ const game = () => {
     const savedNum2 = randomNum2();
     if (operator === 1) {
       const question1 = readlineSync.question(
-        `Question: ${savedNum1} + ${savedNum2}\nYour answer: `
+        `Question: ${savedNum1} + ${savedNum2}\nYour answer: `,
       );
       if (Number(question1) === savedNum1 + savedNum2) {
         correctAnswer();
@@ -26,7 +26,7 @@ const game = () => {
       }
     } else if (operator === 2) {
       const question2 = readlineSync.question(
-        `Question: ${savedNum1} - ${savedNum2}\nYour answer: `
+        `Question: ${savedNum1} - ${savedNum2}\nYour answer: `,
       );
       if (Number(question2) === savedNum1 - savedNum2) {
         correctAnswer();
@@ -36,7 +36,7 @@ const game = () => {
       }
     } else {
       const question3 = readlineSync.question(
-        `Question: ${savedNum1} * ${savedNum2}\nYour answer: `
+        `Question: ${savedNum1} * ${savedNum2}\nYour answer: `,
       );
       if (Number(question3) === savedNum1 * savedNum2) {
         correctAnswer();

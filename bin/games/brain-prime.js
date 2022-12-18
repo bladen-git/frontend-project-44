@@ -20,7 +20,7 @@ const game = () => {
   for (let j = 0; j < 3; j += 1) {
     const savedNum = randomNum();
     const question = readlineSync.question(
-      `Question: ${savedNum} \nYour answer: `
+      `Question: ${savedNum} \nYour answer: `,
     );
 
     if (
