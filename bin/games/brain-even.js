@@ -7,12 +7,11 @@ const randomNum = () => Math.round(Math.random() * 120);
 
 const game = () => {
   const userName = name();
-  console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
     const savedNum = randomNum();
     const question = readlineSync.question(
-      `Question: ${savedNum}\nYour answer: `
+      `Question: ${savedNum}\nYour answer: `,
     );
     if (
       (question === 'yes' && savedNum % 2 === 0)
