@@ -56,3 +56,9 @@ export const randomOp = () => {
       return '???';
   }
 };
+
+export const answerEven = (question, num) => {
+  if ((question === 'yes' && num % 2 === 0)
+  || (question === 'no' && num % 2 !== 0)) return true;
+  return false;
+};

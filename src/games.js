@@ -2,7 +2,7 @@
 import readlineSync from 'readline-sync';
 import name from './cli.js';
 import {
-  calcAnswerAssign, calcQuestion, correctAnswer, randomOp, win, wrongAnswer,
+  answerEven, calcAnswerAssign, calcQuestion, correctAnswer, randomOp, win, wrongAnswer,
 } from './index.js';
 
 export const gameCalc = () => {
@@ -27,4 +27,24 @@ export const gameCalc = () => {
   win(userName);
 };
 
-export const gameEven = (a) => (a * 3);
+export const gameEven = () => {
+  const randomNum = () => Math.round(Math.random() * 120);
+  const userName = name();
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  for (let i = 0; i < 3; i += 1) {
+    const savedNum = randomNum();
+    const question = readlineSync.question(
+      `Question: ${savedNum}\nYour answer: `,
+    );
+    if (answerEven(question, savedNum) === true) {
+      correctAnswer();
+    } else if (question === 'yes') {
+      wrongAnswer(question, 'no', userName);
+      return;
+    } else {
+      wrongAnswer(question, 'yes', userName);
+      return;
+    }
+  }
+  win(userName);
+};
