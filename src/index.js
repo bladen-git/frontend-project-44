@@ -42,3 +42,17 @@ export const primeAnswer = (question, num) => {
   }
   return false;
 };
+
+export const randomOp = () => {
+  const x = Math.floor(Math.random() * 3) + 1;
+  switch (x) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    case 3:
+      return '*';
+    default:
+      return '???';
+  }
+};
