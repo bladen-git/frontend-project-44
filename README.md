@@ -16,7 +16,8 @@ Brain-games is simple project wrote on JavaScript. The player can choose what ga
 
 ### Setup
 To install the game type:
+```
     1) npm install
     2) sudo npm link
-
+```
 
